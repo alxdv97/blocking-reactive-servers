@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  # Blocking server
+  blocking-server:
+    build: blocking-server
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_DATASOURCE_URL=jdbc:h2:mem:testdb
+      - SPRING_DATASOURCE_USERNAME=sa
+      - SPRING_DATASOURCE_PASSWORD=
+    ports:
+      - "8080:8080"
+  # Reactive server
+  reactive-server:
+    build: reactive-server
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_DATASOURCE_URL=r2dbc:h2:mem:///testdb?options=DB_CLOSE_DELAY=-1
+      - SPRING_DATASOURCE_USERNAME=sa
+      - SPRING_DATASOURCE_PASSWORD=
+    ports:
+      - "8081:8081"
+  # Testing server
+  testing-server:
+    build: testing-server
+    ports:
+      - "8888:8888"

@@ -1,5 +1,6 @@
 package ru.alxdv.testingserver.service
 
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 import org.springframework.web.reactive.function.client.WebClient
 import reactor.core.publisher.Flux
@@ -18,11 +19,17 @@ class TestReactorService {
 
     private val testUserDTO = TestUserDTO("testUsername", "testPassword")
 
+    @Value("\${servers.urls.blocking}")
+    lateinit var blockingServerURL: String
+
+    @Value("\${servers.urls.reactive}")
+    lateinit var reactiveServerURL: String
+
     fun testServer(testRequest: TestRequest): Mono<TestResponse> {
 
         val webClient = when (testRequest.serverType) {
-            ServerType.BLOCKING -> WebClient.builder().baseUrl("http://localhost:8080/blocking").build()
-            ServerType.REACTIVE -> WebClient.builder().baseUrl("http://localhost:8081/reactive").build()
+            ServerType.BLOCKING -> WebClient.builder().baseUrl(blockingServerURL).build()
+            ServerType.REACTIVE -> WebClient.builder().baseUrl(reactiveServerURL).build()
         }
 
         val users = Collections.nCopies(testRequest.requestAmount, testUserDTO)

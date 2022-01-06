@@ -1,2 +1,7 @@
 server:
   port: 8888
+
+servers:
+  urls:
+    blocking: "http://localhost:8080/blocking"
+    reactive: "http://localhost:8081/reactive"

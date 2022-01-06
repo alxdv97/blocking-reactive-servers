@@ -1,0 +1,4 @@
+servers:
+  urls:
+    blocking: "http://blocking-server:8080/blocking"
+    reactive: "http://reactive-server:8081/reactive"
