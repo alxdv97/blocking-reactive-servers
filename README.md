@@ -16,3 +16,10 @@
 <li><b>reactive-server</b> - http://localhost:8081/swagger-ui/</li>
 <li><b>testing-server</b> - http://localhost:8888/swagger-ui/</li>
 </ol>
+
+<h2>Try it out!</h2>
+<ol>
+<li>Go to http://localhost:8888/swagger-ui/</li>
+<li>Select testServer endpoint</li>
+<li>Set the params: <b>serverType</b> may be <i>BLOCKING</i> or <i>REACTIVE</i>, <b>requestAmount</b> - natural number</li>
+</ol>
