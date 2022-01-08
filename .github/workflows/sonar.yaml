@@ -1,0 +1,41 @@
+name: SonarCloud
+
+on:
+  pull_request:
+    branches:
+      - '*'
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  sonarcloud:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Setup Kotlin
+        uses: fwilhe2/setup-kotlin@0.2.0
+
+      - name: Analyze blocking-server with SonarCloud
+        # set environment variables:
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        # run sonar maven plugin:
+        run: cd ./blocking-server/ && mvn -B clean verify sonar:sonar -Dsonar.projectKey=alxdv97_blocking-reactive-servers -Dsonar.organization=alxdv97 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN -Dsonar.coverage.jacoco.xmlReportPaths=./target/site/jacoco/jacoco.xml
+      - name: Analyze reactive-server with SonarCloud
+        # set environment variables:
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        # run sonar maven plugin:
+        run: cd ./reactive-server/ && mvn -B clean verify sonar:sonar -Dsonar.projectKey=alxdv97_blocking-reactive-servers -Dsonar.organization=alxdv97 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN -Dsonar.coverage.jacoco.xmlReportPaths=./target/site/jacoco/jacoco.xml
+      - name: Analyze testing-server with SonarCloud
+        # set environment variables:
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        # run sonar maven plugin:
+        run: cd ./testing-server/ && mvn -B clean verify sonar:sonar -Dsonar.projectKey=alxdv97_blocking-reactive-servers -Dsonar.organization=alxdv97 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN -Dsonar.coverage.jacoco.xmlReportPaths=./target/site/jacoco/jacoco.xml
