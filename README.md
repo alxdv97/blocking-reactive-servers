@@ -1,3 +1,5 @@
+![build](https://github.com/alxdv97/blocking-reactive-servers/actions/workflows/maven.yaml/badge.svg)
+
 <h1>Project for simple benchmarking blocking REST and reactive REST web servers</h1>
 
 <h2>Components:</h2>
