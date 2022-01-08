@@ -1,5 +1,11 @@
 ![build](https://github.com/alxdv97/blocking-reactive-servers/actions/workflows/maven.yaml/badge.svg)
 [![codecov](https://codecov.io/gh/alxdv97/blocking-reactive-servers/branch/master/graph/badge.svg?token=XSocJKIRH4)](https://codecov.io/gh/alxdv97/blocking-reactive-servers)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=alxdv97_blocking-reactive-servers&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=alxdv97_blocking-reactive-servers)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=alxdv97_blocking-reactive-servers&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=alxdv97_blocking-reactive-servers)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=alxdv97_blocking-reactive-servers&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=alxdv97_blocking-reactive-servers)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=alxdv97_blocking-reactive-servers&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=alxdv97_blocking-reactive-servers)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=alxdv97_blocking-reactive-servers&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=alxdv97_blocking-reactive-servers)
+
 
 <h1>Project for simple benchmarking blocking REST and reactive REST web servers</h1>
 
