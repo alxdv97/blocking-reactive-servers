@@ -1,4 +1,5 @@
 ![build](https://github.com/alxdv97/blocking-reactive-servers/actions/workflows/maven.yaml/badge.svg)
+[![codecov](https://codecov.io/gh/alxdv97/blocking-reactive-servers/branch/master/graph/badge.svg?token=XSocJKIRH4)](https://codecov.io/gh/alxdv97/blocking-reactive-servers)
 
 <h1>Project for simple benchmarking blocking REST and reactive REST web servers</h1>
 
